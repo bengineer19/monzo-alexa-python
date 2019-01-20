@@ -13,8 +13,10 @@ sb = SkillBuilder()
 ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
 MONTHLY_BUDGET = 1000
 
-
-@sb.request_handler(can_handle_func=is_intent_name("AMAZON.FallbackIntent"))
+@sb.request_handler(can_handle_func=lambda handler_input:
+                    is_intent_name("AMAZON.CancelIntent")(handler_input) or
+                    is_intent_name("AMAZON.StopIntent")(handler_input) or
+                    is_intent_name("AMAZON.FallbackIntent")(handler_input))
 def fallback_handler(handler_input):
     speech_text = "See you later! Enjoy the hackathon."
 
