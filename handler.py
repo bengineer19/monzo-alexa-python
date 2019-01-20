@@ -70,17 +70,17 @@ def can_i_afford_intent_handler(handler_input):
         if price > (MONTHLY_BUDGET - monthly_spend):
             speech_text = f"Sorry, you can't afford this. A {purchase} " \
                           f"costs about {price} pounds. You've already spent " \
-                          f"{monthly_spend} this month."
+                          f"{monthly_spend} pounds this month."
         else:
             remaining = MONTHLY_BUDGET - monthly_spend - price
             speech_text = f"You can afford that. A {purchase} costs about " \
-                          f"{price}. If you buy it your remaining " \
+                          f"{price} pounds. If you buy it your remaining " \
                           f"monthly budget will be {remaining}"
     except KeyError:
         # Just in case....
         speech_text = "Sorry, we couldn't find a price for that product." \
-                      f"You have {MONTHLY_BUDGET - monthly_spend} left to " \
-                      "spend this month"
+                      f"You have {MONTHLY_BUDGET - monthly_spend} pounds" \
+                      " left to spend this month"
 
     handler_input.response_builder.speak(speech_text).set_card(
         SimpleCard("Hello World", speech_text)).set_should_end_session(
