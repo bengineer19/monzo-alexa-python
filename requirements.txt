@@ -1,0 +1,5 @@
+requests
+requests_oauthlib
+ask-sdk
+ask_sdk_core
+monzo
