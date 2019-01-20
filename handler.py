@@ -49,7 +49,7 @@ def monthly_spend_intent_handler(handler_input):
 
     handler_input.response_builder.speak(speech_text).set_card(
         SimpleCard("Hello World", speech_text)).set_should_end_session(
-        True)
+        False)
     return handler_input.response_builder.response
 
 
