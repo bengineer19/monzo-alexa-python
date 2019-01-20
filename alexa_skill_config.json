@@ -1,0 +1,133 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "hack cambridge",
+            "intents": [
+                {
+                    "name": "GetBalance",
+                    "slots": [],
+                    "samples": [
+                        "show me my balance",
+                        "what is my balance"
+                    ]
+                },
+                {
+                    "name": "GetMonthlySpend",
+                    "slots": [],
+                    "samples": [
+                        "the quick brown fox jumped over the lazy dog",
+                        "how much did I spend this month",
+                        "what did I spend this month"
+                    ]
+                },
+                {
+                    "name": "GetPurchaseApproval",
+                    "slots": [
+                        {
+                            "name": "purchase",
+                            "type": "LIST_OF_PRODUCTS"
+                        }
+                    ],
+                    "samples": [
+                        "can I afford",
+                        "can I afford {purchase}",
+                        "can I afford a {purchase}",
+                        "can I afford this {purchase}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "LIST_OF_PRODUCTS",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "car"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "laptop"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "graphics card"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "amazon echo"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "echo dot"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "amazon echo dot"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "google home"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "google home mini"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "oculus rift"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cat"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dog"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fulfilling career"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "food"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
