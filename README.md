@@ -1,7 +1,7 @@
 # Monzo-Alexa-Python
 An Alexa skill for querying a Monzo account, written in Python.
 
-Currenty the skill supports:
+Currently the skill supports:
 * Asking for the current account balance
 * Asking how much has been spent this month
 * Whether a particular purchase is affordable in relation to a monthly budget.
