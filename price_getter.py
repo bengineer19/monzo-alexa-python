@@ -1,5 +1,7 @@
 """Get prices of common products."""
 
+# NOTE: THIS IS TO BE REPLACED BY THE AMAZON PRODUCT API, AND IS ONLY PLACE FOR A DEMO
+
 price_lookup_pounds = {
     "car": 10635,
     "laptop": 450,
