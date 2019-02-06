@@ -10,26 +10,11 @@ MONTHLY_SPEND_OFFSET = 600
 
 
 class MonzoGetter:
+    """Abstracted interface to get information on Monzo account."""
 
     def __init__(self, access_token):
-    # def __init__(self, access_token, client_id, client_secret, redirect_url):
         """Instantiate object with access token and account id."""
         self._access_token = access_token
-
-        # oauth_client = MonzoOAuth2Client(
-        #     client_id,
-        #     client_secret,
-        #     redirect_uri="http://127.0.0.1:21234"
-        #     # redirect_uri=redirect_url
-        # )
-
-        # auth_start_url = oauth_client.authorize_token_url()
-        # print(auth_start_url)
-        # # Now user receives link.
-        # # Code from link gets entered below
-        # code = input("Enter code >>> ")
-        # oauth_client.fetch_access_token(code)
-        # self._client = Monzo.from_oauth_session(oauth_client)#
 
         self._client = Monzo(access_token)
         self._account_id = self._client.get_first_account()['id']
