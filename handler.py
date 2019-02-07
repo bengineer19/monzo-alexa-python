@@ -11,6 +11,7 @@ sb = SkillBuilder()
 
 # Get token from https://developers.monzo.com/
 ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
+# TODO: make this settable/configurable from the skill
 MONTHLY_BUDGET = 1000
 
 @sb.request_handler(can_handle_func=lambda handler_input:
