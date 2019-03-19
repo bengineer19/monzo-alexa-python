@@ -19,6 +19,7 @@ MONTHLY_BUDGET = 1000
                     is_intent_name("AMAZON.StopIntent")(handler_input) or
                     is_intent_name("AMAZON.FallbackIntent")(handler_input))
 def fallback_handler(handler_input):
+    """Handle end of intent."""
     speech_text = "See you later! Enjoy the hackathon."
 
     handler_input.response_builder.speak(speech_text).set_card(
@@ -28,6 +29,7 @@ def fallback_handler(handler_input):
 
 @sb.request_handler(can_handle_func=is_intent_name("GetBalance"))
 def balance_intent_handler(handler_input):
+    """Handle a 'GetBalance' intent."""
     # type: (HandlerInput) -> Response
 
     monzo = MonzoGetter(ACCESS_TOKEN)
@@ -42,6 +44,7 @@ def balance_intent_handler(handler_input):
 
 @sb.request_handler(can_handle_func=is_intent_name("GetMonthlySpend"))
 def monthly_spend_intent_handler(handler_input):
+    """Handle a GetMonthlySpend intent."""
     # type: (HandlerInput) -> Response
 
     monzo = MonzoGetter(ACCESS_TOKEN)
@@ -56,6 +59,7 @@ def monthly_spend_intent_handler(handler_input):
 
 @sb.request_handler(can_handle_func=is_intent_name("GetPurchaseApproval"))
 def can_i_afford_intent_handler(handler_input):
+    """Handle a 'GetPurchaseApproval' intent."""
     # type: (HandlerInput) -> Response
 
     slots = handler_input.request_envelope.request.intent.slots
@@ -91,6 +95,7 @@ def can_i_afford_intent_handler(handler_input):
 
 @sb.request_handler(can_handle_func=is_request_type("LaunchRequest"))
 def launch_request_handler(handler_input):
+    """Handle the launch of the app."""
     # type: (HandlerInput) -> Response
     speech_text = f"Yo yo yo what's popping. Come checkout what is up with your Monzo"
 
